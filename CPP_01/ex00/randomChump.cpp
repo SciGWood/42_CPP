@@ -12,10 +12,10 @@
 
 #include "Zombie.hpp"
 
-void Zombie::randomChump(std::string name)
+/*It creates a zombie, name it, and the zombie announces itself.*/
+void	randomChump(std::string name)
 {
-	Zombie	Zombie;
+	Zombie	Zombie(name);
 
-	Zombie._name = name;
-	std::cout << BLUE << name << ": BraiiiiiiinnnzzzZ..." << RESET << std::endl;
+	Zombie.announce();
 }

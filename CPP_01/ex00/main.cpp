@@ -12,7 +12,22 @@
 
 #include "Zombie.hpp"
 
-Zombie	Zombie;
+int main(void)
+{
+	std::string	name;
 
-class Zombie = Zombie::newZombie(Foo);
-Zombie::announce();
+	std::cout << "\nZombie is created on the stack\n" 
+				"You can give a name to the Zombie:" << std::endl;
+	std::cin >> name;
+	Zombie		Zombie_on_the_stack(name);
+	Zombie_on_the_stack.announce();
+
+	std::cout << "\nZombie is created on the heap\n" 
+				"You can give a name to the Zombie:" << std::endl;
+	std::cin >> name;
+	Zombie 		*Zombie_on_the_heap = newZombie(name);
+	Zombie_on_the_heap->announce();
+	delete Zombie_on_the_heap;
+
+
+}

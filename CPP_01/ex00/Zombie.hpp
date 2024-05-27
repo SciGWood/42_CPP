@@ -6,16 +6,16 @@
 # include <iomanip>
 # include <string>
 
-# define RESET = \033[0m;
-# define BLUE = \033[94m;
-# define RED = \033[91m;
+# define RESET "\033[0m"
+# define BLUE "\033[94m"
+# define RED "\033[91m"
 
 class	Zombie
 {
     private:
         std::string	_name;
     public:
-        Zombie(/* args */);
+        Zombie(std::string name);
         ~Zombie();
         void	announce(void);
 };

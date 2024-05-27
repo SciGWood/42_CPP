@@ -33,12 +33,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)   🛠️ 🚧      Compiling ZOMBIES      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling ZOMBIES      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🧟💾🎆🧟‍♂️     ZOMBIES compiled     🧟‍♂️💾📣🧟 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🧟💾🎆🧟     ZOMBIES compiled     🧟🎆💾🧟 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
