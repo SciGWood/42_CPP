@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:46:30 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/27 12:34:41 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:20:13 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,24 @@ phonebook::phonebook()
 	total_nb = 0;
 }
 
-void	phonebook::display_details(size_t index)
+int	phonebook::display_details(std::string indexSTR)
 {
-	if (index > (size_t)this->total_nb - 1 && this->total_nb < 8)
+	size_t				index;
+	std::istringstream	iss(indexSTR);
+
+	if (!(iss >> index) || index > 7)
+	{
+		std::cerr << "\nIndex not correct\n" << std::endl;
+		return (1);
+	}
+	else if (index > (size_t)this->total_nb - 1 && this->total_nb < 8)
 	{
 		std::cerr << "\nNo details found at this index\n" << std::endl;
-		return ;
+		return (1);
 	}
-	contact_tab[index].contact_details(index);
+	else
+		contact_tab[index].contact_details(index);
+	return (0);
 }
 
 int		phonebook::check_first_line()

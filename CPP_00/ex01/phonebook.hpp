@@ -17,7 +17,7 @@ class	phonebook
 		void	addContact(std::string FirstName, std::string LastName, std::string Nickname,
 							std::string PhoneNumber, std::string DarkestSecret);
 		void	display_contact_tab(void);
-		void	display_details(size_t index);
+		int		display_details(std::string	indexSTR);
 		int		check_digit(std::string PhoneNumber);
 		int		check_first_line();
 };

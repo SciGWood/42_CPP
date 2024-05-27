@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:49:36 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/27 12:33:11 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:19:44 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,19 @@ int	main()
 		}
 		else if (input == "SEARCH")
 		{
-			size_t		index;
 			std::string	indexSTR;
 			MyBook.display_contact_tab();
 			if (!MyBook.check_first_line())
-				std::cout << "\nMyBook is empty, please ADD a new contact\n" << std::endl;
+				std::cout << "\nMyBook is empty, please ADD a new contact first\n" << std::endl;
 			else
 			{
 				std::cout << "\nWhich contact do you want to see in details? Index:" << std::endl;
 				std::cin >> indexSTR;
-				std::istringstream	iss(indexSTR);
-				if (!(iss >> index))
-					std::cerr << "\nIndex not correct\n" << std::endl;
-				else
-					MyBook.display_details(index);
+				while (MyBook.display_details(indexSTR))
+				{
+					std::cout << "\nWhich contact do you want to see in details? Index:" << std::endl;
+					std::cin >> indexSTR;
+				}
 			}
 		}
 		else if (!input.empty())

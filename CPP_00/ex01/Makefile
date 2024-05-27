@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 10:25:45 by gdetourn          #+#    #+#              #
-#    Updated: 2024/05/27 11:54:27 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/05/27 13:48:23 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 📑☎️ 💾🎆    PhoneBook compiled    🎆💾☎️ 📑 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 📑☎️ 💾🎆     PhoneBook compiled     🎆💾☎️ 📑 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
@@ -49,7 +49,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(BOLD)$(ORANGE)🧹🧼    exec deleted    🧼🧹$(RESET)"
+	@echo "$(BOLD)$(ORANGE)🧹🧼      exec deleted      🧼🧹$(RESET)"
 
 re: fclean all
 

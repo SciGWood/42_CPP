@@ -17,15 +17,15 @@ class	contact
 	public:
 		contact();
 		~contact();
-		void	getFirstName(std::string input);
-		void	getLastName(std::string input);
-		void	getNickname(std::string input);
-		void	getPhoneNumber(std::string input);
-		void	getDarkestSecret(std::string input);
-		void	display_contact(int index);
-		void	contact_details(size_t index);
+		void		getFirstName(std::string input);
+		void		getLastName(std::string input);
+		void		getNickname(std::string input);
+		void		getPhoneNumber(std::string input);
+		void		getDarkestSecret(std::string input);
+		void		display_contact(int index);
+		void		contact_details(size_t index);
 		std::string	check_size(const std::string& input);
-		int		check_empty(void);
+		int			check_empty(void);
 };
 
 #endif
