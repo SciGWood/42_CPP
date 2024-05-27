@@ -25,6 +25,7 @@ class	contact
 		void	display_contact(int index);
 		void	contact_details(size_t index);
 		std::string	check_size(const std::string& input);
+		int		check_empty(void);
 };
 
 #endif

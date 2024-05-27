@@ -6,15 +6,13 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:49:36 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/24 15:48:19 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:33:11 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <iostream>
-// #include <string>
 #include "phonebook.hpp"
 #include "contact.hpp"
-/* PhoneNumber only digits */
+
 int	main()
 {
 	phonebook	MyBook;
@@ -52,6 +50,11 @@ int	main()
 			{
 				std::cout << "Please enter a PhoneNumber: " << std::endl;
 				std::cin >> PhoneNumber;
+				while (MyBook.check_digit(PhoneNumber))
+				{
+					std::cout << "Only digits accepted: " << std::endl;
+					std::cin >> PhoneNumber;
+				}
 			}
 			while (DarkestSecret.empty())
 			{
@@ -71,13 +74,18 @@ int	main()
 			size_t		index;
 			std::string	indexSTR;
 			MyBook.display_contact_tab();
-			std::cout << "\nWhich contact do you want to see in details? Index :" << std::endl;
-			std::cin >> indexSTR;
-			std::istringstream	iss(indexSTR);
-			if (!(iss >> index) || index > 7)
-				std::cerr << "\nIndex not correct\n" << std::endl;
+			if (!MyBook.check_first_line())
+				std::cout << "\nMyBook is empty, please ADD a new contact\n" << std::endl;
 			else
-				MyBook.display_details(index);
+			{
+				std::cout << "\nWhich contact do you want to see in details? Index:" << std::endl;
+				std::cin >> indexSTR;
+				std::istringstream	iss(indexSTR);
+				if (!(iss >> index))
+					std::cerr << "\nIndex not correct\n" << std::endl;
+				else
+					MyBook.display_details(index);
+			}
 		}
 		else if (!input.empty())
 		{
