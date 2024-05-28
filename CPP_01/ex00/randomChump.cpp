@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-/*It creates a zombie, name it, and the zombie announces itself.*/
+/*It creates a zombie on the stack, name it, and the zombie announces itself.*/
 void	randomChump(std::string name)
 {
 	Zombie	Zombie(name);

@@ -9,6 +9,8 @@
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
 # define RED "\033[91m"
+# define GREEN "\033[92m"
+# define YELLOW "\033[33m"
 
 class	Zombie
 {
