@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:49:32 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 11:13:51 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:10:23 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	Zombie::announce(void)
 
 void	Zombie::setName(std::string name)
 {
-    this->_name = name;
+	this->_name = name;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << this->_name << RED << " has been destroyed" << RESET << std::endl;
+	std::cout << this->_name << RED << " has been destroyed" << RESET << std::endl;
 }
