@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 10:49:13 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 14:14:57 by gdetourn         ###   ########.fr       */
+/*   Created: 2024/05/28 12:03:45 by gdetourn          #+#    #+#             */
+/*   Updated: 2024/05/28 15:00:40 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int	main(void)
+HumanA::HumanA(std::string name, Weapon& type) : _name(name), _type(type)
 {
-	std::string name;
-	int			N = 5;
+}
 
-	std::cout << "\nA zombies Horde will be created\n" 
-				"Which name do you want?" << std::endl;
-	std::cin >> name;
+void	HumanA::attack()
+{
+	if (_type.getType() != "")
+		std::cout << this->_name << " attacks with their " << _type.getType() << std::endl;
+	else
+		std::cout << this->_name << " \"No weapon, No attack\"" << std::endl;
+}
 
-	Zombie	*horde = zombieHorde(N, name);
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
-
-	std::cout << GREEN << "\n          This is the END of the program\n" << RESET << std::endl;
-	return (0);
+HumanA::~HumanA()
+{
 }

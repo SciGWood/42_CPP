@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 10:49:13 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 14:14:57 by gdetourn         ###   ########.fr       */
+/*   Created: 2024/05/28 12:03:20 by gdetourn          #+#    #+#             */
+/*   Updated: 2024/05/28 14:49:10 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int	main(void)
+Weapon::Weapon(std::string type)
 {
-	std::string name;
-	int			N = 5;
+	this->_type = type;
+}
 
-	std::cout << "\nA zombies Horde will be created\n" 
-				"Which name do you want?" << std::endl;
-	std::cin >> name;
+/* const because a getter has read-access only */
+const std::string&	Weapon::getType()
+{
+	return (this->_type);
+}
 
-	Zombie	*horde = zombieHorde(N, name);
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
+void	Weapon::setType(std::string newType)
+{
+	this->_type = newType;
+}
 
-	std::cout << GREEN << "\n          This is the END of the program\n" << RESET << std::endl;
-	return (0);
+Weapon::~Weapon()
+{
 }

@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:44:39 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 12:00:46 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:15:35 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # define YELLOW "\033[33m"
 # define RESET "\033[0m"
+# define GREEN "\033[92m"
 
 int	main(void)
 {
@@ -32,5 +33,7 @@ int	main(void)
 		<< "\nThe value of the string variable is:  " << Brain << "\n"
 		<< "The value pointed to by stringPTR is: " << *stringPTR << "\n"
 		<< "The value pointed to by stringREF is: " << stringREF << std::endl;
+	
+	std::cout << GREEN << "\n          This is the END of the program\n" << RESET << std::endl;
 	return (0);
 }
