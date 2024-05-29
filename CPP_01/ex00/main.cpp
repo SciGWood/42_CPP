@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:10:37 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/27 17:26:53 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:33:48 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int main(void)
 {
 	std::string	name;
 
-	std::cout << "\nZombie will be created on the stack and destroyed in the end\n" 
-				"You can give a name to the Zombie:" << std::endl;
+	std::cout << "\nThis Zombie will be created on the stack and destroyed in the end\n" 
+				"You can give a name to this Zombie:" << std::endl;
 	std::cin >> name;
 
 	Zombie		Zombie_on_the_stack(name);
@@ -25,8 +25,8 @@ int main(void)
 
 	std::cout << YELLOW << "\n------------------------------------\n" << RESET
 
-				<< "\nZombie will be created on the heap and deleted right after\n" 
-				<< "You can give a name to the Zombie:" << std::endl;
+				<< "\nThis Zombie will be created on the heap and deleted right after\n" 
+				<< "You can give a name to this Zombie:" << std::endl;
 	std::cin >> name;
 
 	Zombie 		*Zombie_on_the_heap = newZombie(name);
