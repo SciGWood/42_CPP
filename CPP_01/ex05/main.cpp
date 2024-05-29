@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:13:34 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 17:52:57 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:12:27 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(void)
 {
 	std::string	level;
 	Harl		Harl;
-	std::cout << "What is the level of your complain?\n(DEBUG | INFO | WARNING | ERROR)"
+	std::cout << "What is the level of your complain?\nDEBUG | INFO | WARNING | ERROR"
 				<< std::endl;
 	std::cin >> level;
 	Harl.complain(level);	

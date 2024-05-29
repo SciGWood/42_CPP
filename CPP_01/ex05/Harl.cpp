@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:14:09 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/28 17:54:36 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:12:58 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	Harl::complain(std::string level)
 		if (complains[i] == level)
 			(this->*priv_fonct[i])();
 	}
-	if (!level.empty() && (level != "DEBUG" || level != "INFO" || level != "WARNING"
-		|| level != "ERROR"))
+	if (!level.empty() && (level != "DEBUG" && level != "INFO" && level != "WARNING"
+		&& level != "ERROR"))
 	{
 		std::cout << "\nYou can only ask for DEBUG, INFO, WARNING or ERROR\n\n"
 					<< "       Let's try again ;) !!\n\n" << std::endl;

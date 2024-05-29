@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 17:13:14 by gdetourn          #+#    #+#              #
-#    Updated: 2024/05/28 17:17:06 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/05/29 10:26:14 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🧟💾🎆🧟     Harl compiled     🧟🎆💾🧟 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 👎💾🎆🍔     Harl compiled     🍔🎆💾👎 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
