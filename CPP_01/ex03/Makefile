@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 12:11:16 by gdetourn          #+#    #+#              #
-#    Updated: 2024/05/28 14:28:31 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/05/29 10:21:29 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling WhyViolence      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)         🛠️ 🚧      Compiling WhyViolence      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🧟💾🎆🧟     WhyViolence compiled     🧟🎆💾🧟 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🏌️ 🏑🏏💾🎆🆘🔨     WhyViolence compiled     🔨🆘🎆💾🏌️ 🏑🏏 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
