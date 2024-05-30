@@ -6,13 +6,13 @@
 class Fixed
 {
 	private:
-		int					RawBits;//				Fixed point position starting at 0
-		static const int	fraction = 8;//			Number width int bits, here is 8 bits.
+		int					RawBits;//					Value of fixed point number.
+		static const int	fraction = 8;//				Number width int bits, here is 8 bits.
 	public:
-		Fixed();//									Default constructor
-		Fixed(const Fixed &newNumber);//			Copy constructor
+		Fixed();//										Default constructor
+		Fixed(const Fixed &newNumber);//				Copy constructor
 		Fixed&	operator=(const Fixed &newNumber);//	Copy assignement operator
-		~Fixed();//									Destructor
+		~Fixed();//										Destructor
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };

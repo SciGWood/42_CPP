@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 16:28:22 by gdetourn          #+#    #+#              #
-#    Updated: 2024/05/29 17:16:37 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/05/30 16:24:47 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)   🛠️ 🚧      Compiling Fixed_ex01      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling Fixed_ex01      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🛠️ 💾🎆🗜️     Fixed_ex01 compiled     🗜️ 🎆💾🛠️ $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🛟💾🎆📌     Fixed_ex01 compiled     📌🎆💾🛟 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp

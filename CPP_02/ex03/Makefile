@@ -6,16 +6,18 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 16:28:22 by gdetourn          #+#    #+#              #
-#    Updated: 2024/05/30 16:25:07 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/05/30 16:27:01 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Fixed
+NAME	= BSP
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 CC		= c++
 
 SRC	= 	main.cpp \
 		Fixed.cpp \
+		Point.cpp \
+		bsp.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -31,12 +33,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling Fixed      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling BSP      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🛟💾🎆📌     Fixed compiled     📌🎆💾🛟 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🛟💾🎆📌     BSP compiled     📌🎆💾🛟 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
