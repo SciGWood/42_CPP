@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:00:10 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/30 11:59:17 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:10:01 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,33 @@
 Fixed::Fixed()
 {
 	this->RawBits = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &newNumber)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->RawBits = newNumber.getRawBits();
 	// *this = newNumber;
 }
 
-Fixed& Fixed::Fixed::operator=(const Fixed &newNumber)
+Fixed& Fixed::operator=(const Fixed &newNumber)
 {
-	std::cout << "Copy assignement Fixed::operator called" << std::endl;
 	if (this != &newNumber)
 		this->RawBits = newNumber.getRawBits();
 	return (*this);
 }
 
-std::ostream &Fixed::operator<<(std::ostream &out, const Fixed &fix)
-{
-	out << fix.getRawBits() / (float)(1 << fix.NbWidth);
-	return (out);
-}
-
 Fixed::Fixed(const int n)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->RawBits = n << NbWidth;
 }
 
 Fixed::Fixed(const float nf)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->RawBits = static_cast<int>(roundf(nf * (1 << NbWidth)));
 }
 
 int		Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->RawBits);
 }
 
@@ -139,17 +127,58 @@ Fixed	Fixed::operator/(const Fixed &newNumber) const
 }
 
 //incrementation et decrementation
-Fixed	Fixed::operator++();//		pre-incrementation;
-Fixed	Fixed::operator++(int);//	post-incrementation;
-Fixed	Fixed::operator--();//		pre-incrementation;
-Fixed	Fixed::operator--(int);//	post-incrementation;
+Fixed	Fixed::operator++()//		pre-incrementation;
+{
+	this->RawBits++;
+	return (*this);
+}
 
-static Fixed	Fixed::&min(Fixed &a, Fixed &b);
-static const Fixed	Fixed::&min(const Fixed &a, const Fixed &b);
-static Fixed	Fixed::&max(Fixed &a, Fixed &b);
-static const Fixed	Fixed::&max(const Fixed &a, const Fixed &b);
+Fixed	Fixed::operator++(int)//	post-incrementation;
+{
+	Fixed tmp = *this;
+	++(*this);
+	return (tmp);
+}
+
+Fixed	Fixed::operator--()//		pre-decrementation;
+{
+	this->RawBits--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)//	post-decrementation;
+{
+	Fixed tmp = *this;
+	--(*this);
+	return (tmp);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	return ((a < b) ? a : b);
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return ((a < b) ? a : b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	return ((a > b) ? a : b);
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return ((a > b) ? a : b);
+}
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fix)
+{
+	out << fix.toFloat();
+	return (out);
 }
