@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:00:10 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/29 21:48:26 by gwen             ###   ########.fr       */
+/*   Updated: 2024/05/30 11:09:56 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,37 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const Fixed &newNumber)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->RawBits = newNumber.getRawBits();
+	// *this = newNumber;
+}
+
+Fixed& Fixed::operator=(const Fixed &newNumber)
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	if (this != &newNumber)
+		this->RawBits = newNumber.getRawBits();
+	return (*this);
+}
+
 std::ostream &operator<<(std::ostream &out, const Fixed &fix)
 {
-	out << fix.getRawBits() / (float)(1 << fix.fraction);
+	out << fix.getRawBits() / (float)(1 << fix.NbWidth);
 	return (out);
 }
 
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->RawBits = n << fraction;
+	this->RawBits = n << NbWidth;
 }
 
 Fixed::Fixed(const float nf)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->RawBits = static_cast<int>(roundf(nf * (1 << fraction)));
-}
-
-Fixed::Fixed(const Fixed &other)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	this->RawBits = other.getRawBits();
-	// *this = other;
-}
-
-Fixed& Fixed::operator=(const Fixed &other)
-{
-	std::cout << "Copy assignement operator called" << std::endl;
-	if (this != &other)
-		this->RawBits = other.getRawBits();
-	return (*this);
+	this->RawBits = static_cast<int>(roundf(nf * (1 << NbWidth)));
 }
 
 int		Fixed::getRawBits(void) const
@@ -64,12 +64,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->RawBits) / (1 << fraction));
+	return (static_cast<float>(this->RawBits) / (1 << NbWidth));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->RawBits >> fraction);
+	return (this->RawBits >> NbWidth);
 }
 
 Fixed::~Fixed()
