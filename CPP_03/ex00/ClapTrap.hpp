@@ -16,8 +16,7 @@ class ClapTrap
 		std::string	name;
 		int			HitPoints;
 		int			Energy;
-		int			Damage;
-		int			strenght;
+		int			AttackDamage;
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);//				Copy constructor
@@ -29,7 +28,7 @@ class ClapTrap
 		void			beRepaired(unsigned int amount);
 
 		std::string		getName();
-		void			setStrenght(unsigned int damage);
+		void			setStrenght(unsigned int strenght);
 		unsigned int	getStrenght();
 		bool			check_if_dead(int amount);
 		void			display_state();

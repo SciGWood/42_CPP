@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+         #
+#    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 14:40:43 by gwen              #+#    #+#              #
-#    Updated: 2024/06/03 17:38:00 by gwen             ###   ########.fr        #
+#    Updated: 2024/06/04 14:04:09 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC		= c++
 
 SRC	= 	main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -12,12 +13,11 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	name;
 		int			HitPoints;
 		int			Energy;
-		int			Damage;
-		int			strenght;
+		int			AttackDamage;
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);//				Copy constructor
