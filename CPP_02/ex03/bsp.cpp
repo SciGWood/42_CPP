@@ -6,25 +6,36 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:22:29 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/30 17:46:57 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:53:52 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
+static Fixed	area(Point const &point, Point const &d, Point const &e)
+{
+	return Fixed((point.get_x().toFloat() * (d.get_y().toFloat() - e.get_y().toFloat()))
+				+ (d.get_x().toFloat() * (e.get_y().toFloat() - point.get_y().toFloat()))
+				+ (e.get_x().toFloat() * (point.get_y().toFloat() - d.get_y().toFloat()))
+				)/2;
+}
+
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed	Bary_ab = (b.get_x() - a.get_x()) * (point.get_y() - a.get_y())
-						- (b.get_y() - a.get_y()) * (point.get_x() - a.get_x());
-	Fixed	Bary_cb = (c.get_x() - b.get_x()) * (point.get_y() - b.get_y())
-						- (c.get_y() - b.get_y()) * (point.get_x() - b.get_x());
-	Fixed	Bary_ac = (a.get_x() - c.get_x()) * (point.get_y() - c.get_y())
-						- (a.get_y() - c.get_y()) * (point.get_x() - c.get_x());
-	/* return ((Bary_ab > 0 && Bary_cb > 0 && Bary_ac > 0)
-			|| (Bary_ab < 0 && Bary_cb < 0 && Bary_ac < 0)); */
-	if ((Bary_ab > 0 && Bary_cb > 0 && Bary_ac > 0)
-		|| (Bary_ab < 0 && Bary_cb < 0 && Bary_ac < 0))
+	/*calculates areas and check if point is inside or outside of the triangle ABC*/
+	Fixed	ABC = area(a, b, c);
+
+	Fixed	PAB = area(point, a, b);
+	PAB = PAB < 0 ? PAB * -1 : PAB;
+
+	Fixed	PBC = area(point, b, c);
+	PBC = PBC < 0 ? PBC * -1 : PBC;
+
+	Fixed	PAC = area(point, a, c);
+	PAC = PAC < 0 ? PAC * -1 : PAC;
+
+	if (ABC == PAB + PBC + PAC)
 		return (true);
 	return (false);
 }

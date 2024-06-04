@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:00:26 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/05/30 17:49:17 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:49:40 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,24 @@ int main(void)
 	Point	a(0.0f, 3.0f);
 	Point	b(0.0f, 0.0f);
 	Point	c(4.0f, 0.0f);
-	Point	P(2.0f, 1.8f);
-	Point	G(0.0f, 5.2f);
-	std::cout << "Point a(5.4f, 2.3f)\nPoint b(4.0f, 6.0f)\nPoint c(10.8f, -2.6f)\n\n"
-				<< BLUE << "Point P(-2.6f, 5.8f)\n" << RESET << std::endl;
-	if (!bsp(a, b, c, P))
-		std::cout << GREEN << "Point P is inside the ABC triangle" << RESET << std::endl;
+	Point	I(2.0f, 1.8f);
+	Point	O(0.0f, 5.2f);
+	std::cout << "Point a(0.0f, 3.0f)\nPoint b(0.0f, 0.0f)\nPoint c(4.0f, 0.0f)\n\n"
+				<< BLUE << "Point I(2.0f, 1.8f)" << RESET << std::endl;
+	if (bsp(a, b, c, I))
+		std::cout << GREEN << "Point I is inside the ABC triangle\n" << RESET << std::endl;
 	else
-		std::cout << RED << "Point P is outside of the ABC triangle\n" << RESET << std::endl;
+		std::cout << RED << "Point I is outside of the ABC triangle\n" << RESET << std::endl;
 
-	std::cout << BLUE << "Point G(f, f)\n" << RESET << std::endl;
-	if (!bsp(a, b, c, G))
-		std::cout << GREEN << "Point G is inside the ABC triangle" << RESET << std::endl;
+	std::cout << BLUE << "Point O(0.0f, 5.2f)" << RESET << std::endl;
+	if (!bsp(a, b, c, O))
+		std::cout << GREEN << "Point O is inside the ABC triangle\n" << RESET << std::endl;
 	else
-		std::cout << RED << "Point G is outside of the ABC triangle\n" << RESET << std::endl;
+		std::cout << RED << "Point O is outside of the ABC triangle\n" << RESET << std::endl;
+	return (0);
+}
 
-	float	x;
+	/* float	x;
 	float	y;
 	std::cout << "Your turn to define a Point P coordinates (float)(x,y)\n\n"
 					"P.x = " << std::flush;
@@ -51,6 +53,4 @@ int main(void)
 	if (bsp(a, b, c, D))
 		std::cout << GREEN << "This point is inside the ABC triangle" << RESET << std::endl;
 	else
-		std::cout << RED << "This point is outside of the ABC triangle" << RESET << std::endl;
-	return (0);
-}
+		std::cout << RED << "This point is outside of the ABC triangle" << RESET << std::endl; */
