@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 13:14:53 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 15:59:40 by gdetourn         ###   ########.fr       */
+/*   Created: 2024/06/04 15:36:28 by gdetourn          #+#    #+#             */
+/*   Updated: 2024/06/04 17:04:42 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << YELLOW << "ScavTrap default constructor called" << RESET << std::endl;
+	std::cout << YELLOW << "FragTrap default constructor called" << RESET << std::endl;
 	this->name = name;
 	this->HitPoints = 100;
-	this->Energy = 50;
-	this->AttackDamage = 20;
+	this->Energy = 100;
+	this->AttackDamage = 30;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
 	*this = other;
 }
 
-ScavTrap&	ScavTrap::operator=(const ScavTrap &other)
+FragTrap&	FragTrap::operator=(const FragTrap &other)
 {
 	if (this != &other)
 	{
@@ -39,33 +40,34 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap &other)
 	return (*this);
 }
 
-void	ScavTrap::attack(const std::string& target)
+void	FragTrap::attack(const std::string& target)
 {
 	if (!check_if_dead(0) && this->Energy > 0)
 	{
 		this->Energy--;
-		std::cout << "ScavTrap " << this->name << RED << " attacks " << RESET << target
+		std::cout << "FragTrap " << this->name << RED << " attacks " << RESET << target
 					<< std::endl;
 		display_state();
 		check_if_dead(0);
 	}
 }
 
-void	ScavTrap::display_state()
+void	FragTrap::display_state()
 {
-	std::cout << GREEN << "ScavTrap " << this->name
+	std::cout << GREEN << "FragTrap " << this->name
 				<< ": HitPoints = " << this->HitPoints
 				<< ", Energy = " << this->Energy << "\n"
 				<< RESET << std::endl;
 }
 
-void	ScavTrap::guardGate()
+void	FragTrap::highFivesGuys(void)
 {
-    std::cout << BLUE << "ScavTrap " << this->name  << " is now in Gate keeper mode\n"
-				<< RESET << std::endl;
+    std::cout << "FragTrap " << this->name << " says: "
+                << YELLOW << "\"HIGH FIVES GUYS :) !!!\"\n"
+                << RESET << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << YELLOW << "ScavTrap Destructor called" << RESET << std::endl;
+	std::cout << YELLOW << "FragTrap Destructor called" << RESET << std::endl;
 }
