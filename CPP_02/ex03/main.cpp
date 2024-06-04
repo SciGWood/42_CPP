@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:00:26 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 16:50:45 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:43:00 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int main(void)
 	Point	O(0.0f, 5.2f);
 	std::cout << "Point a(0.0f, 3.0f)\nPoint b(0.0f, 0.0f)\nPoint c(4.0f, 0.0f)\n\n"
 				<< BLUE << "Point I(2.0f, 1.8f)" << RESET << std::endl;
-	if (bsp(a, b, c, I))
+	if (bsp(Point(0.0f, 3.0f), Point(0.0f, 0.0f), Point(4.0f, 0.0f), Point(2.0f, 1.8f)))
 		std::cout << GREEN << "Point I is inside the ABC triangle\n" << RESET << std::endl;
 	else
 		std::cout << RED << "Point I is outside of the ABC triangle\n" << RESET << std::endl;
 
 	std::cout << BLUE << "Point O(0.0f, 5.2f)" << RESET << std::endl;
-	if (!bsp(a, b, c, O))
+	if (!bsp(Point(0.0f, 3.0f), Point(0.0f, 0.0f), Point(4.0f, 0.0f), Point(0.0f, 5.2f)))
 		std::cout << GREEN << "Point O is inside the ABC triangle\n" << RESET << std::endl;
 	else
 		std::cout << RED << "Point O is outside of the ABC triangle\n" << RESET << std::endl;

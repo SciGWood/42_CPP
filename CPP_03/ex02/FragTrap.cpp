@@ -6,13 +6,17 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:36:28 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 17:04:42 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:57:09 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {

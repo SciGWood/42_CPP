@@ -1,6 +1,8 @@
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
+#include <iostream>
+#include <cmath>
 #include <string>
 
 # define RESET "\033[0m"
@@ -12,7 +14,7 @@
 class FragTrap : public ClapTrap
 {
 	public:
-		FragTrap();//									Default Constructor
+		FragTrap();//									Default constructor
 		FragTrap(std::string name);
 		FragTrap(const	FragTrap &other);//				Copy constructor
 		FragTrap&	operator=(const	FragTrap &other);//	Copy assignement operator

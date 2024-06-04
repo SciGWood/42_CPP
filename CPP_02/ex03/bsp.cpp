@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:22:29 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 16:46:01 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:35:52 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static Fixed	area(Point const &point, Point const &d, Point const &e)
 				)/2;
 }
 
-bool	bsp(Point const &a, Point const &b, Point const &c, Point const &point)
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	/*calculates areas and check if point is inside or outside of the triangle ABC*/
 	Fixed	ABC = area(a, b, c);

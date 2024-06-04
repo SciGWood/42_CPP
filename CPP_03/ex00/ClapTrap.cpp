@@ -6,11 +6,15 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:39:41 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/04 14:52:03 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:48:29 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+}
 
 ClapTrap::ClapTrap(std::string name) : HitPoints(10), Energy(10), AttackDamage(0)
 {

@@ -6,12 +6,16 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:14:53 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 17:08:49 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:52:35 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {

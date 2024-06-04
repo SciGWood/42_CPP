@@ -6,13 +6,14 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:39:41 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/04 17:49:12 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:49:31 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamonTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
