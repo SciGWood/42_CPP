@@ -5,20 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/03 14:40:43 by gwen              #+#    #+#              #
-#    Updated: 2024/06/05 14:54:45 by gdetourn         ###   ########.fr        #
+#    Created: 2024/06/05 14:51:35 by gdetourn          #+#    #+#              #
+#    Updated: 2024/06/05 14:55:41 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ClapTrap_ex03
+NAME	= Polymorphism
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
 SRC	= 	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp \
-		DiamondTrap.cpp
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -34,12 +33,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)  🛠️ 🚧      Compiling ClapTrap_ex03      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)  🛠️ 🚧      Compiling Polymorphism      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🦹💾🎆🕸️     ClapTrap_ex03 compiled     🕸️ 🎆💾🦹 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🦹💾🎆🕸️     Polymorphism compiled     🕸️ 🎆💾🦹 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
