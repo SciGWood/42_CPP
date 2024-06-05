@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:39:41 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/04 17:48:59 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:08:56 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ unsigned int	ClapTrap::getStrenght()
 
 void	ClapTrap::display_state()
 {
-	std::cout << GREEN << "ScavTrap " << this->name
+	std::cout << GREEN << "ClapTrap " << this->name
 				<< ": HitPoints = " << this->HitPoints
 				<< ", Energy = " << this->Energy << "\n"
 				<< RESET << std::endl;

@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:45:18 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/05 13:57:36 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:15:20 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	DiamondTrap::display_state()
 
 void	DiamondTrap::whoAmI()
 {
-    std::cout << RED << "DiamondTrap Mice asks : \"WHO AM I??\"\nI am...\n" << BLUE << "ClapTrap " << ClapTrap::name
+    std::cout << RED << "DiamondTrap Mice asks : \"WHO AM I??\"\nI am...\n"
+				<< BLUE << "ClapTrap " << ClapTrap::name
                 << RESET << "\n AND\n" << GREEN << "DiamondTrap " << this->name << "\n"
                 << RESET << std::endl;
 }

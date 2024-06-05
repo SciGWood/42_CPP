@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:39:13 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/05 13:51:17 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:18:39 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ int main(void)
 	Zombie.beRepaired(2);
 	Mice.attack(Frog.getName());
 	Frog.takeDamage(Mice.getStrenght());
+	Mice.beRepaired(2);
+	Mice.highFivesGuys();
+	Mice.guardGate();
 	Mice.whoAmI();
 	Goliath.attack(Zombie.getName());
 	Zombie.takeDamage(Goliath.getStrenght());
