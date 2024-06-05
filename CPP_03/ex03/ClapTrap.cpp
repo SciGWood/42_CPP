@@ -6,14 +6,14 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:39:41 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/04 17:49:31 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:26:35 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include "DiamonTrap.hpp"
+#include "DiamondTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
@@ -21,8 +21,8 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name) : HitPoints(10), Energy(10), AttackDamage(0)
 {
+	std::cout << YELLOW << "ClapTrap constructor called" << RESET << std::endl;
 	this->name = name;
-	std::cout << YELLOW << "ClapTrap default constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)

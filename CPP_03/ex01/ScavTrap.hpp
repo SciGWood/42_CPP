@@ -12,7 +12,7 @@
 class ScavTrap : public ClapTrap
 {
 	public:
-		ScavTrap()//									Default Constructor
+		ScavTrap();//									Default Constructor
 		ScavTrap(std::string name);
 		ScavTrap(const	ScavTrap &other);//				Copy constructor
 		ScavTrap&	operator=(const	ScavTrap &other);//	Copy assignement operator

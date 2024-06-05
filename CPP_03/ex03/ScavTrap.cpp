@@ -6,12 +6,14 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:14:53 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 17:52:46 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:26:47 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 ScavTrap::ScavTrap()
 {
@@ -19,7 +21,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << YELLOW << "ScavTrap default constructor called" << RESET << std::endl;
+	std::cout << YELLOW << "ScavTrap constructor called" << RESET << std::endl;
 	this->name = name;
 	this->HitPoints = 100;
 	this->Energy = 50;

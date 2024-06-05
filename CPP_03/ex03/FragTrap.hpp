@@ -11,7 +11,7 @@
 # define GREEN "\033[92m"
 # define YELLOW "\033[33m"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap();//									Default constructor

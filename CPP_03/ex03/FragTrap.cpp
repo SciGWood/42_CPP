@@ -6,13 +6,14 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:36:28 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/04 17:57:16 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:54:16 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 FragTrap::FragTrap()
 {
@@ -20,7 +21,7 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << YELLOW << "FragTrap default constructor called" << RESET << std::endl;
+	std::cout << YELLOW << "FragTrap constructor called" << RESET << std::endl;
 	this->name = name;
 	this->HitPoints = 100;
 	this->Energy = 100;

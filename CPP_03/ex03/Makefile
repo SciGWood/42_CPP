@@ -6,13 +6,13 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 14:40:43 by gwen              #+#    #+#              #
-#    Updated: 2024/06/04 17:44:32 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/05 11:48:32 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	= ClapTrap_ex03
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
 SRC	= 	main.cpp \

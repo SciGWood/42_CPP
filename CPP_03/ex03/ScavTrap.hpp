@@ -9,10 +9,10 @@
 # define GREEN "\033[92m"
 # define YELLOW "\033[33m"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
-		ScavTrap()//									Default Constructor
+		ScavTrap();//									Default Constructor
 		ScavTrap(std::string name);
 		ScavTrap(const	ScavTrap &other);//				Copy constructor
 		ScavTrap&	operator=(const	ScavTrap &other);//	Copy assignement operator
