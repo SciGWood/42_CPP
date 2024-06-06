@@ -1,0 +1,31 @@
+#ifndef DOG_HPP
+# define DOG_HPP
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include "Brain.hpp"
+
+# define RESET "\033[0m"
+# define BLUE "\033[94m"
+# define RED "\033[91m"
+# define GREEN "\033[92m"
+# define YELLOW "\033[33m"
+
+class Dog : public AAnimal
+{
+	private:
+		std::string	type;
+		Brain		*B;
+	public:
+		Dog();//									Default Constructor
+		Dog(const Dog &other);//				Copy constructor
+		Dog&	operator=(const Dog &other);//	Copy assignement operator
+		~Dog();//									Destructor
+
+		std::string	getType() const;
+		Brain		*getBrain() const;
+		void		makeSound() const;
+};
+
+#endif

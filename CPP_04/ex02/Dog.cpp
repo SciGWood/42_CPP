@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 14:54:26 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 15:37:46 by gdetourn         ###   ########.fr       */
+/*   Created: 2024/06/05 14:54:30 by gdetourn          #+#    #+#             */
+/*   Updated: 2024/06/06 15:40:26 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#include "AAnimal.hpp"
+#include "Dog.hpp"
 #include "Brain.hpp"
 
-Cat::Cat()
+Dog::Dog()
 {
-	std::cout << YELLOW << "MIAOU ** Cat default constructor called ** MIAOU" << RESET << std::endl;
-	this->type = "Cat";
+	std::cout << YELLOW << "WHOUF ** Dog default constructor called ** WHOUF" << RESET << std::endl;
+	this->type = "Dog";
 	this->B = new Brain();
 }
 
-Cat::Cat(const Cat &other)
+Dog::Dog(const Dog &other)
 {
 	this->B = new Brain(*(other.getBrain()));
 	this->type = other.getType();
 }
 
-Cat&	Cat::operator=(const Cat &other)
+Dog&	Dog::operator=(const Dog &other)
 {
 	if (this != &other && this->B)
 	{
@@ -38,23 +38,23 @@ Cat&	Cat::operator=(const Cat &other)
 	return (*this);
 }
 
-std::string	Cat::getType() const
+std::string	Dog::getType() const
 {
 	return (this->type);
 }
 
-Brain	*Cat::getBrain() const
+Brain	*Dog::getBrain() const
 {
 	return (this->B);
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << BLUE << "** MIAOU **" << RESET << std::endl;
+	std::cout << GREEN << "** WHOUF **" << RESET << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << YELLOW << "MIAOU ** Cat destructor called ** MIAOU" << RESET << std::endl;
+	std::cout << YELLOW << "WHOUF ** Dog destructor called ** WHOUF" << RESET << std::endl;
 	delete (this->B);
 }
