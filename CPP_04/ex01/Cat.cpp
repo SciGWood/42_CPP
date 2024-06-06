@@ -6,35 +6,45 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:26 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 11:31:18 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:11:19 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	std::cout << YELLOW << "MIAOU ** Cat default constructor called ** MIAOU" << RESET << std::endl;
 	this->type = "Cat";
-	new Brain();
+	this->B = new Brain();
 }
 
 Cat::Cat(const Cat &other)
 {
-	*this = other;
+	this->B = new Brain(*(other.getBrain()));
+	this->type = other.getType();
 }
 
 Cat&	Cat::operator=(const Cat &other)
 {
-	if (this != &other)
+	if (this != &other && this->B)
+	{
+		delete (this->B);
+		this->B = new Brain;
 		this->type = other.type;
+	}
 	return (*this);
 }
 
 std::string	Cat::getType() const
 {
 	return (this->type);
+}
+
+Brain	*Cat::getBrain() const
+{
+	return (this->B);
 }
 
 void	Cat::makeSound() const
@@ -45,5 +55,5 @@ void	Cat::makeSound() const
 Cat::~Cat()
 {
 	std::cout << YELLOW << "MIAOU ** Cat destructor called ** MIAOU" << RESET << std::endl;
-	delete Brain;
+	delete (this->B);
 }

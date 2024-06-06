@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:30 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 11:31:29 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:11:33 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,34 @@ Dog::Dog() : Animal()
 {
 	std::cout << YELLOW << "WHOUF ** Dog default constructor called ** WHOUF" << RESET << std::endl;
 	this->type = "Dog";
-	new Brain();
+	this->B = new Brain();
 }
 
 Dog::Dog(const Dog &other)
 {
-	*this = other;
+	this->B = new Brain(*(other.getBrain()));
+	this->type = other.getType();
 }
 
 Dog&	Dog::operator=(const Dog &other)
 {
-	if (this != &other)
+	if (this != &other && this->B)
+	{
+		delete (this->B);
+		this->B = new Brain;
 		this->type = other.type;
+	}
 	return (*this);
 }
 
 std::string	Dog::getType() const
 {
 	return (this->type);
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (this->B);
 }
 
 void	Dog::makeSound() const
@@ -45,5 +55,5 @@ void	Dog::makeSound() const
 Dog::~Dog()
 {
 	std::cout << YELLOW << "WHOUF ** Dog destructor called ** WHOUF" << RESET << std::endl;
-	delete Brain;
+	delete (this->B);
 }

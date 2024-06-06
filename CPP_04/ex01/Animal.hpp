@@ -2,8 +2,6 @@
 # define ANIMAL_HPP
 
 #include <iostream>
-#include <cmath>
-#include <string>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"

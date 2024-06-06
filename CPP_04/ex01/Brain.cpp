@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 11:14:15 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 12:00:44 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:12:56 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Brain&	Brain::operator=(const Brain &other)
 	return (*this);
 }
 
-std::string	*Brain::getIdeas()
+std::string	*Brain::getIdeas() const
 {
 	return (this->ideas);
 }

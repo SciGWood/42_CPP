@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:35 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 12:05:55 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:19:13 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,33 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+/*		Shallow copy:
+		----------------------------------------
+		A ---> [heap adress of a member] <--- B
+		----------------------------------------
+		If the value inside the address is modified at any point, the value will be
+		modified both in A and B since they both point to the same location in memory
+		This is a bad idea. If any variables were allocated on the heap -> deep copy!
+
+		Deep copy:
+		-----------------------------------------------------------------
+		A ---> [heap adress of a member] B ---> [heap adress of a member]
+		-----------------------------------------------------------------
+		Despite having the same values each object has its own allocated memory
+		for its member variables */
+
 int	main(void)
 {
 	int	n = 10;
 
-	Animal *Family = new Animal[n];
+	const Animal *(Family[n]);
 	for (int i = 0; i < n / 2; i++)
 		Family[i] = new Dog();
-	for (int j = n / 2; j < n; j++)
+	Family[4]->makeSound();
+	for (int i = n / 2; i < n; i++)
 		Family[i] = new Cat();
-	// const WrongAnimal* i = new WrongCat();
-	/* std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	delete j;
-	delete i; */
-	delete []Family;
+	Family[9]->makeSound();
+	for (int i = 0; i < n; i++)
+		delete Family[i];
 	return (0);
 }

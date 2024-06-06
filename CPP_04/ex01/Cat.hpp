@@ -16,7 +16,7 @@ class Cat : public Animal
 {
 	private:
 		std::string	type;
-		Brain	*Brain;
+		Brain		*B;
 	public:
 		Cat();//								Default Constructor
 		Cat(const Cat &other);//				Copy constructor
@@ -24,6 +24,7 @@ class Cat : public Animal
 		~Cat();//								Destructor
 
 		std::string	getType() const;
+		Brain		*getBrain() const;
 		void		makeSound() const;
 };
 

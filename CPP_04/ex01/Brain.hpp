@@ -21,7 +21,7 @@ class Brain
 		Brain&	operator=(const Brain &other);//	Copy assignement operator
 		~Brain();//									Destructor
 
-		std::string	*getIdeas();
-}
+		std::string	*getIdeas() const;
+};
 
 #endif
