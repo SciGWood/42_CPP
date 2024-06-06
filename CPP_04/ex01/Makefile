@@ -6,11 +6,11 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/05 14:51:35 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/06 12:04:08 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/06 12:05:50 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Polymorphism
+NAME	= Brain
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
@@ -20,6 +20,7 @@ SRC	= 	main.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
+		Brain.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -35,12 +36,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)  🛠️ 🚧      Compiling Polymorphism      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)   🛠️ 🚧      Compiling Brain      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🐕💾🎆🐈     Polymorphism compiled     🐈🎆💾🐕 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🐕💾🎆🐈🧠     Brain compiled     🧠🐈🎆💾🐕 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
