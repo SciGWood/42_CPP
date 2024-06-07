@@ -12,14 +12,21 @@
 # define GREEN "\033[92m"
 # define YELLOW "\033[33m"
 
-class ICharacter
+class Character : public ICharacter
 {
+	private:
+		AMateria					*inventory[4];
+		const std::string			name;
 	public:
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Character(std::string name);//						Default Constructor
+		Character(const ICharacter &other);//				Copy constructor
+		Character&	operator=(const ICharacter &other);//	Copy assignement operator
+
+		std::string const	&getName() const;
+		void				equip(AMateria* m);
+		void				unequip(int idx);
+		void				use(int idx, Character& target);
+		~Character();//	Destructor
 };
 
 #endif

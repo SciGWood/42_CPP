@@ -23,7 +23,7 @@ class Cure : public AMateria
 		~Cure();//								Destructor
 
 		std::string const&	getType() const;
-		AMateria*			clone() const;
+		Cure*				clone() const;
 		void				use(ICharacter& target);
 };
 

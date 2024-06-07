@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:56:04 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 16:27:10 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:14:46 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ std::string const&	Ice::getType() const
 Ice*	Ice::clone() const
 {
 	Ice *New = new Ice;
-	return (New);	
+	return (New);
 }
 
 void	Ice::use(ICharacter& target)

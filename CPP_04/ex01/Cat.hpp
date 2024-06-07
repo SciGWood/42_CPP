@@ -21,11 +21,11 @@ class Cat : public Animal
 		Cat();//								Default Constructor
 		Cat(const Cat &other);//				Copy constructor
 		Cat&	operator=(const Cat &other);//	Copy assignement operator
-		~Cat();//								Destructor
+		virtual ~Cat();//								Destructor
 
-		std::string	getType() const;
-		Brain		*getBrain() const;
-		void		makeSound() const;
+		virtual std::string	getType() const;
+		virtual void		makeSound() const;
+		Brain				*getBrain() const;
 };
 
 #endif

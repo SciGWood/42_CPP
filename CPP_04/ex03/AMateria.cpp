@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:55:29 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 16:28:21 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:17:48 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ std::string const&	AMateria::getType() const
 	return (this->type);
 }
 
-/* AMateria*	AMateria::clone() const
+AMateria*	AMateria::clone() const
 {
-	
-} */
+	AMateria *New = new AMateria;
+	return (New);
+}
 
 void	AMateria::use(ICharacter& target)
 {

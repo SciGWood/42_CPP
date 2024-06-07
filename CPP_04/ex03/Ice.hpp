@@ -23,7 +23,7 @@ class Ice : public AMateria
 		~Ice();//								Destructor
 
 		std::string const&	getType() const;
-		AMateria*			clone() const;
+		Ice*				clone() const;
 		void				use(ICharacter& target);
 };
 

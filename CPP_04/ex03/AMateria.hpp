@@ -1,10 +1,8 @@
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-#include <iostream>
-#include <cmath>
 #include <string>
-#include "Brain.hpp"
+#include "Character.hpp"
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -15,18 +13,17 @@
 class AMateria
 {
 	protected:
-		std::string	type;
+		const std::string	type;
 	public:
 		AMateria(std::string const &type);//			Default Constructor
 		AMateria(const AMateria &other);//				Copy constructor
 		AMateria&	operator=(const AMateria &other);//	Copy assignement operator
-		virtual ~AMateria() = 0;//									Destructor
 
 		std::string const&	getType() const;
 		virtual AMateria*	clone() const = 0;
 		virtual void		use(ICharacter& target);
-
-
+		virtual				~AMateria() = 0;//			Destructor
 };
 
+/* virtual pour parent, pas necessaire pour enfant */
 #endif

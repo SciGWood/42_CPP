@@ -21,11 +21,11 @@ class Dog : public AAnimal
 		Dog();//									Default Constructor
 		Dog(const Dog &other);//				Copy constructor
 		Dog&	operator=(const Dog &other);//	Copy assignement operator
-		~Dog();//									Destructor
+		virtual ~Dog();//									Destructor
 
-		std::string	getType() const;
-		Brain		*getBrain() const;
-		void		makeSound() const;
+		virtual std::string	getType() const;
+		virtual void		makeSound() const;
+		Brain				*getBrain() const;
 };
 
 #endif
