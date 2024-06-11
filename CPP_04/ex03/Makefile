@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 15:54:43 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/06 16:27:49 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/11 11:55:11 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC	= 	main.cpp \
 		AMateria.cpp \
 		Ice.cpp \
 		Cure.cpp \
-		Character.cpp
+		Character.cpp \
+		MateriaSource.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 

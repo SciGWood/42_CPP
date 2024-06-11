@@ -6,19 +6,19 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:56:19 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/07 14:14:14 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:32:04 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
 #include "Cure.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
-Cure::Cure(std::string const &type)
+Cure::Cure() : AMateria("cure")
 {
-	this->type = "cure";
 }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria("cure")
 {
 	*this = other;
 }
@@ -43,7 +43,7 @@ Cure*	Cure::clone() const
 
 void	Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << target << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure::~Cure()

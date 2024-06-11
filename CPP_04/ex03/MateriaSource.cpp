@@ -6,48 +6,75 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:00:57 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/07 14:12:42 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:26:56 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 #include "MateriaSource.hpp"
 
-IMateriaSource::IMateriaSource()
+MateriaSource::MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+		this->bag[i] = 0;
 }
 
-IMateriaSource::IMateriaSource(const IMateriaSource &other)
+MateriaSource::MateriaSource(const MateriaSource &other)
 {
+	for(int i = 0; i < 4; i++)
+	{
+		if (other.bag[i])
+			this->bag[i] = other.bag[i]->clone();
+	}
 }
 
-IMateriaSource& IMateriaSource::operator=(const IMateriaSource &other)
+MateriaSource&  MateriaSource::operator=(const MateriaSource &other)
 {
+	for (int i = 0; i < 0; i++)
+	{
+		if (this->bag[i])
+			delete this->bag[i];
+		if (other.bag[i])
+			this->bag[i] = other.bag[i]->clone();
+	}
+	return (*this);
 }
 
-// virtual
-void	IMateriaSource::learnMateria(AMateria*)
+void	MateriaSource::learnMateria(AMateria *m)
 {
-    IMateriaSource  *bag[4];
-    for (int i; i < 0; i++)
-    {
-        if (!bag[i])
-            bag[i] = &AMateria;
-    }
-    // AMateria *New = new AMateria;
-    // New = &AMateria;
+	int i = 0;
+	while (this->bag[i] && i < 4)
+		i++;
+	if (i >= 4)
+	{
+		std::cout << "Can't learn more than 4 Materia" << std::endl;
+		return ;
+	}
+	this->bag[i] = m;
+	std::cout << BLUE << "Materia " << (this->bag[i])->getType() << " just learned"
+				<< RESET << std::endl;
 }
 
-// virtual
-AMateria*	IMateriaSource::createMateria(std::string const & type)
+AMateria*	MateriaSource::createMateria(std::string const &type)
 {
-    return (New);
+	int i = 0;
+
+	while (this->bag[i] && (this->bag[i])->getType() != type && i < 4)
+		i++;
+	if (i >= 4 || !(this->bag[i]))
+	{
+		std::cout << RED << "Materia " << type << " unknown\n" << RESET << std::endl;
+		return (NULL);
+	}
+	std::cout << BLUE << "Materia " << type << " just created" << RESET << std::endl;
+	return (this->bag[i]->clone());
 }
 
-// virtual
-IMateriaSource::~IMateriaSource()
+MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->bag[i])
+			delete this->bag[i];
+	}
 }

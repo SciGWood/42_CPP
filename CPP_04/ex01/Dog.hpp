@@ -23,9 +23,9 @@ class Dog : public Animal
 		Dog&	operator=(const Dog &other);//	Copy assignement operator
 		virtual ~Dog();//									Destructor
 
-		virtual std::string	getType() const;
-		virtual void		makeSound() const;
-		Brain				*getBrain() const;
+		std::string	getType() const;
+		void		makeSound() const;
+		Brain		*getBrain() const;
 };
 
 #endif

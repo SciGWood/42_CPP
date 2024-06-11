@@ -1,29 +1,22 @@
 #ifndef MATERIASOURCE_HPP
-# define MATERISOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include <iostream>
-#include <cmath>
-#include <string>
-#include "AMateria.hpp"
-
-# define RESET "\033[0m"
-# define BLUE "\033[94m"
-# define RED "\033[91m"
-# define GREEN "\033[92m"
-# define YELLOW "\033[33m"
+#include "IMateriaSource.hpp"
 
 /* ALL member functions of an Interface are "virtual" */
 
-class IMateriaSource
+class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria					*bag[4];
 	public:
-		IMateriaSource();//											Default Constructor
-		IMateriaSource(const IMateriaSource &other);//				Copy constructor
-		IMateriaSource&	operator=(const IMateriaSource &other);//	Copy assignement operator
+		MateriaSource();//											Default Constructor
+		MateriaSource(const MateriaSource &other);//				Copy constructor
+		MateriaSource&	operator=(const MateriaSource &other);//	Copy assignement operator
 
-		virtual void		learnMateria(AMateria*) = 0;
-		virtual AMateria*	createMateria(std::string const & type) = 0;
-		virtual				~IIMateriaSource() = 0;//				Destructor
+		void			learnMateria(AMateria *m);
+		AMateria*		createMateria(std::string const &type);
+		~MateriaSource();//											Destructor
 };
 
 #endif
