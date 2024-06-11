@@ -6,10 +6,11 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:28:03 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/11 12:33:46 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:33:13 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
 #include "Character.hpp"
 
 Character::Character(std::string name) : name(name)

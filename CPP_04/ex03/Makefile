@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 15:54:43 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/11 11:55:11 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/11 14:28:08 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)     🛠️ 🚧      Compiling Materia      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)   🛠️ 🚧      Compiling Materia      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"

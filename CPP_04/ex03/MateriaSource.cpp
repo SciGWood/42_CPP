@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:00:57 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/11 12:26:56 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:40:11 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	MateriaSource::learnMateria(AMateria *m)
 		return ;
 	}
 	this->bag[i] = m;
-	std::cout << BLUE << "Materia " << (this->bag[i])->getType() << " just learned"
+	std::cout << GREEN << "Materia " << (this->bag[i])->getType() << " just learned"
 				<< RESET << std::endl;
 }
 
