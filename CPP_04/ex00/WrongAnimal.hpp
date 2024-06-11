@@ -2,8 +2,6 @@
 # define WRONGANIMAL_HPP
 
 #include <iostream>
-#include <cmath>
-#include <string>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -20,13 +18,13 @@ class WrongAnimal
 	protected:
 		std::string	type;
 	public:
-		WrongAnimal();//									Default Constructor
+		WrongAnimal();//										Default Constructor
 		WrongAnimal(const WrongAnimal &other);//				Copy constructor
 		WrongAnimal&	operator=(const WrongAnimal &other);//	Copy assignement operator
-		virtual ~WrongAnimal();//									Destructor
+		virtual ~WrongAnimal();//								Destructor
 
 		virtual std::string	getType() const;
-		virtual void		makeSound() const;
+		void				makeSound() const;
 };
 
 #endif

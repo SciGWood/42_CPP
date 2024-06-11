@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:35 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 15:46:45 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:14:07 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
 	const Animal* meta = new Animal();
 	meta->makeSound();
 	delete meta;
+	std::cout << std::endl;
 	const Animal *(Family[n]);
 	for (int i = 0; i < n / 2; i++)
 		Family[i] = new Dog();

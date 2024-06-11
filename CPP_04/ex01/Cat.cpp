@@ -6,13 +6,11 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:26 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 15:37:46 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:10:29 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
 
 Cat::Cat()
 {

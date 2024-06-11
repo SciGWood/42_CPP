@@ -23,10 +23,10 @@ class AAnimal
 		AAnimal();//									Default Constructor
 		AAnimal(const AAnimal &other);//				Copy constructor
 		AAnimal&	operator=(const AAnimal &other);//	Copy assignement operator
-		virtual ~AAnimal() = 0;//									Destructor
+		virtual ~AAnimal() = 0;//						Destructor
 
 		virtual std::string	getType() const;
-		virtual void		makeSound() const = 0;
+		virtual void		makeSound() const = 0;// 	pure virtual "= 0"
 };
 
 #endif

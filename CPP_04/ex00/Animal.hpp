@@ -2,8 +2,6 @@
 # define ANIMAL_HPP
 
 #include <iostream>
-#include <cmath>
-#include <string>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -23,7 +21,7 @@ class Animal
 		Animal();//									Default Constructor
 		Animal(const Animal &other);//				Copy constructor
 		Animal&	operator=(const Animal &other);//	Copy assignement operator
-		virtual ~Animal();//									Destructor
+		virtual ~Animal();//						Destructor
 
 		virtual std::string	getType() const;
 		virtual void		makeSound() const;

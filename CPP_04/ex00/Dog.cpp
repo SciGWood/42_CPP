@@ -6,11 +6,10 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:30 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 15:35:17 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:51:45 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Dog.hpp"
 
 Dog::Dog()

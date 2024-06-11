@@ -6,13 +6,11 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:54:30 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/06 15:40:26 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:23:12 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
 #include "Dog.hpp"
-#include "Brain.hpp"
 
 Dog::Dog()
 {

@@ -1,16 +1,8 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include <iostream>
-#include <cmath>
-#include <string>
+#include "AAnimal.hpp"
 #include "Brain.hpp"
-
-# define RESET "\033[0m"
-# define BLUE "\033[94m"
-# define RED "\033[91m"
-# define GREEN "\033[92m"
-# define YELLOW "\033[33m"
 
 class Dog : public AAnimal
 {
@@ -18,10 +10,10 @@ class Dog : public AAnimal
 		std::string	type;
 		Brain		*B;
 	public:
-		Dog();//									Default Constructor
+		Dog();//								Default Constructor
 		Dog(const Dog &other);//				Copy constructor
 		Dog&	operator=(const Dog &other);//	Copy assignement operator
-		virtual ~Dog();//									Destructor
+		virtual ~Dog();//						Destructor
 
 		std::string	getType() const;
 		void		makeSound() const;

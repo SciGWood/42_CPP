@@ -21,7 +21,7 @@ class Animal
 		Animal();//									Default Constructor
 		Animal(const Animal &other);//				Copy constructor
 		Animal&	operator=(const Animal &other);//	Copy assignement operator
-		virtual ~Animal();//									Destructor
+		virtual ~Animal();//						Destructor
 
 		virtual std::string	getType() const;
 		virtual void		makeSound() const;
