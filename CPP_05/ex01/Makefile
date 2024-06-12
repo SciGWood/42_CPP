@@ -6,16 +6,17 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 14:51:46 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/11 17:42:54 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/12 11:20:37 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Bureaucrat
+NAME	= Forms
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
 SRC	= 	main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -31,12 +32,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)   🛠️ 🚧      Compiling Bureaucrat      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)     🛠️ 🚧      Compiling Forms      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 💼💾🎆🗂️     Bureaucrat compiled     🗂️ 🎆💾💼 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 💼💾🎆🗂️ 📋     Forms compiled     📋🗂️ 🎆💾💼 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp

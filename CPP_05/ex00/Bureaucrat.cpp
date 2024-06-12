@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:51:07 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/11 17:41:56 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:00:27 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
 		throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
-	*this = other;
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
-	{
-		this->_name = other._name;
 		this->_grade = other._grade;
-	}
 	return (*this);
 }
 

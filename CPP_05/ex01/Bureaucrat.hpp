@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -9,10 +10,12 @@
 # define GREEN "\033[92m"
 # define YELLOW "\033[33m"
 
+class Form;
+
 class Bureaucrat
 {
 	private:
-		std::string			_name;
+		const std::string	_name;
 		int					_grade;
 	public:
 		Bureaucrat(const std::string &name, int grade);//	Default Constructor
@@ -24,6 +27,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		upGrade();
 		void		downGrade();
+		void		signForm(Form &F);
 
 		class GradeTooHighException : public std::exception
 		{
