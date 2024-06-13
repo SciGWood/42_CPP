@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:51:07 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/12 17:53:41 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/13 10:27:15 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	Bureaucrat::signForm(AForm &F)
 	catch(const std::exception& e)
 	{
 		std::cerr << RED << this->_name << " couldn't sign " << F.getName()
-					<< " Form because: \"" << e.what() << "\"\n" << RESET << std::endl;
+					<< " because: \"" << e.what() << "\"\n" << RESET << std::endl;
 	}
 }
 

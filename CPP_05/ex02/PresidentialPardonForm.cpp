@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 15:09:56 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/12 17:07:08 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/13 10:35:01 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (this->isSigned == false)
-		std::cerr << this->name << " must be signed in order to execute it!" << std::endl;
+		throw AForm::FormNotSigned();
 	else if (executor.getGrade() > this->execGrade)
 		throw AForm::GradeTooLowException();
 	std::cout << BLUE << target << " has been pardoned by Zaphod Beeblebrox."

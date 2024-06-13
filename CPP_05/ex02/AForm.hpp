@@ -38,6 +38,12 @@ class	AForm
 				const char* what() const throw();
 		};
 
+		class FormNotSigned : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
 		class FormAlreadySigned : public std::exception
 		{
 			public:

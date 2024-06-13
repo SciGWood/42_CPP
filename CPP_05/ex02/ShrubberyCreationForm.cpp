@@ -32,7 +32,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (this->isSigned == false)
-		std::cerr << this->name << " must be signed in order to execute it!" << std::endl;
+		throw AForm::FormNotSigned();
 	else if (executor.getGrade() > this->execGrade)
 		throw AForm::GradeTooLowException();
 	std::ofstream	Tree((target + "_shrubbery").c_str());
@@ -91,7 +91,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	Tree << asciiTree;
 	Tree.close();
 	std::cout << GREEN << "An ASCII CherryTree has been created in file " << target
-				<< "_shrubbery" << RESET << std::endl;
+				<< "_shrubbery." << RESET << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

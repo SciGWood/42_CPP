@@ -76,6 +76,11 @@ const char *AForm::GradeTooLowException::what() const throw()
 	return ("TooLowException");
 }
 
+const char *AForm::FormNotSigned::what() const throw()
+{
+	return ("Form must be signed in order to execute it!");
+}
+
 const char *AForm::FormAlreadySigned::what() const throw()
 {
 	return ("FormAlreadySigned");
