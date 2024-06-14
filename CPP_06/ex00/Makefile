@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 14:59:51 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/13 15:17:15 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/14 12:06:58 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)     🛠️ 🚧      Compiling ScalarConverter      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling ScalarConverter      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"

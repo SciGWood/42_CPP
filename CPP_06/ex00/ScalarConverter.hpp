@@ -3,9 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <cmath>
+#include <cfloat>
 #include <cstdlib>
 #include <limits>
+#include <climits>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -20,13 +23,15 @@ class ScalarConverter
 	private:
 		static bool	isChar(const std::string &str);
 		static bool	isInt(const std::string &str);
-		static bool	isDouble(const std::string &str);
 		static bool	isFloat(const std::string &str);
+		static bool	isDouble(const std::string &str);
 
 		static void	printChar(const std::string &str);
 		static void	printInt(const std::string &str);
-		static void	printDouble(const std::string &str);
 		static void	printFloat(const std::string &str);
+		static void	printDouble(const std::string &str);
+		
+		static void	printType(const std::string	&str);
 
 		ScalarConverter();//											Default Constructor
 		

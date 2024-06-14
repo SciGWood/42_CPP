@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:17:25 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/13 17:08:41 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:20:44 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
     if (argc != 2)
-        std::cout << "Usage: enter a number to convert, only one argument accepted"
+        std::cout << "Usage: enter a number to convert. (only one argument accepted)"
                     << std::endl;
     else
     {
