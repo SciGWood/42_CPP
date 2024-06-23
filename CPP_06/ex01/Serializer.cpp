@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 15:31:25 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/14 15:47:27 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/23 08:19:59 by gwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ Serializer::Serializer()
 
 Serializer::Serializer(const Serializer &other)
 {
-	(void)other;
+	if (this != &other)
+		*this = other;
 }
 
 Serializer&	Serializer::operator=(const Serializer& other)
 {
-	(void)other;
+	if (this != &other)
+		*this = other;
 	return (*this);
 }
 
