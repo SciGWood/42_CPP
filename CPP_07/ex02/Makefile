@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/23 09:27:43 by gwen              #+#    #+#              #
-#    Updated: 2024/06/23 10:43:29 by gwen             ###   ########.fr        #
+#    Created: 2024/06/23 10:33:11 by gwen              #+#    #+#              #
+#    Updated: 2024/06/23 10:33:47 by gwen             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Whatever
+NAME	= Array
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
@@ -30,12 +30,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)      🛠️ 🚧      Compiling Whatever      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)      🛠️ 🚧      Compiling Array      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🔤 💾🎆 🔢     Whatever compiled     🔢 🎆💾 🔤 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🔤 💾🎆 🔢     Array compiled     🔢 🎆💾 🔤 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
