@@ -12,17 +12,8 @@
 # define MAGENTA "\033[35m"
 # define CYAN "\033[36m"
 
-// template <typename T>
-// void	crypto(T &toHide)
-// {
-// 	int	code;
-
-// 	code = toHide + 5;
-// 	print(code);
-// }
-
 template <typename T>
-void	print(T const &toPrint)
+void	print(const T &toPrint)
 {
 	std::cout << toPrint << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 10:01:11 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/23 11:15:15 by gwen             ###   ########.fr       */
+/*   Updated: 2024/06/23 13:35:20 by gwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	main(void)
 {
-	int	array[] = {'s', 'a', 'l', 'u', 't'};
+	int	array[] = {5, 0, 7, 3, 1};
 
 	iter(array, 5, ::print);
-	// iter(array, 3, ::crypto);
-	iter(array, 5, ::print);
-
 	return (0);
 }
