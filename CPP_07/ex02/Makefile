@@ -6,7 +6,7 @@
 #    By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 10:33:11 by gwen              #+#    #+#              #
-#    Updated: 2024/06/23 10:33:47 by gwen             ###   ########.fr        #
+#    Updated: 2024/06/23 16:41:18 by gwen             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ		= $(SRC:.cpp=.o)
 
 # Colors
 RESET = \033[0m
-BOLD = \033[1m
+BOLD = \033[1ms
 RED = \033[91m
 GREEN = \033[92m
 YELLOW = \033[33m
@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) 🔤 💾🎆 🔢     Array compiled     🔢 🎆💾 🔤 $(RESET)"
+	@echo "$(BOLD)$(GREEN) 📊 💾🎆 📋     Array compiled     📋 🎆💾 📊 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
