@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 10:33:11 by gwen              #+#    #+#              #
-#    Updated: 2024/06/24 15:08:04 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/06/24 15:08:40 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= Array
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
-SRC	= 	ex02.cpp \
+SRC	= 	main.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 
