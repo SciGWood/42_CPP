@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+         #
+#    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 10:33:11 by gwen              #+#    #+#              #
-#    Updated: 2024/06/23 16:41:18 by gwen             ###   ########.fr        #
+#    Updated: 2024/06/24 15:08:04 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= Array
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
-SRC	= 	main.cpp \
+SRC	= 	ex02.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 

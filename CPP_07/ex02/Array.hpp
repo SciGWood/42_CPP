@@ -22,7 +22,7 @@ class Array
 		unsigned int	_size;
 	public:
 		Array();//										Default Constructor
-		Array(unsigned int size);
+		Array(unsigned int n);
 		Array(const Array &other);//				    Copy constructor
 		Array&	operator=(const Array &other);//	    Copy assignement operator
 		~Array();//										Destructor
@@ -44,7 +44,7 @@ Array<T>::Array() : _array(new T[0]()), _size(0)
 }
 
 template <typename T>
-Array<T>::Array(unsigned int size) : _array(new T[size]()), _size(size)
+Array<T>::Array(unsigned int n) : _array(new T[n]()), _size(n)
 {
 
 }
@@ -79,7 +79,7 @@ T	&Array<T>::operator[](unsigned int i) const
 {
 	if (i >= this->_size)
 		throw (Array<T>::OutOfBoundsException());
-	return (this->_array[1]);
+	return (this->_array[i]);
 }
 
 template <typename T>

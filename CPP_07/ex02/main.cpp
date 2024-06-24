@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 10:32:33 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/23 16:36:06 by gwen             ###   ########.fr       */
+/*   Updated: 2024/06/24 15:07:22 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main()
 		Array<int>	arr(6);
 		for (unsigned int i = 0; i < arr.size(); i++)
 			std::cout << "Array[" << i << "] = " << arr[i] << std::endl;
+		std::cout << std::endl;
 		arr[0] = 5;
 		arr[1] = 10;
 		arr[2] = 25;
@@ -27,6 +28,22 @@ int	main()
 		arr[5] = 28;
 		for (unsigned int i = 0; i < arr.size(); i++)
 			std::cout << "Array[" << i << "] = " << arr[i] << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		Array<const int>	arr(1);
+		for (unsigned int i = 0; i < arr.size(); i++)
+			std::cout << "Array[" << i << "] = " << arr[i] << std::endl;
+		// try
+		// {
+		// 	arr[0] = 6;
+		// }
+		// catch(const std::exception& e)
+		// {
+		// 	std::cerr << e.what() << '\n' << std::endl;
+		// }
 	}
 
 	{
@@ -45,6 +62,7 @@ int	main()
 		Array<std::string>	arr(6);
 		for (unsigned int i = 0; i < arr.size(); i++)
 			std::cout << "Array[" << i << "] = " << arr[i] << std::endl;
+		std::cout << std::endl;
 		arr[0] = "Hello";
 		arr[1] = "World";
 		arr[2] = "Dans";
