@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwen <gwen@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 08:47:36 by gwen              #+#    #+#             */
-/*   Updated: 2024/06/23 09:20:21 by gwen             ###   ########.fr       */
+/*   Updated: 2024/06/24 13:08:10 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-
 
 static Base	*generate(void)
 {
