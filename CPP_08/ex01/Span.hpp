@@ -2,11 +2,9 @@
 # define SPAN_HPP
 
 #include <iostream>
-#include <cstdlib>
-#include <exception>
-#include <algorithm>
+#include <stdexcept>
 #include <vector>
-#include <list>
+#include <algorithm>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -20,33 +18,29 @@ class Span
 {
 	private:
 		unsigned int		_N;
-		std::vector<int>	vector;
+		std::vector<int>	_vector;
 	public:
-		Span(unsigned int N);
-		~Span();
+		Span(unsigned int N);//					Default Constructor
+		Span(const Span &other);//				Copy constructor
+		Span&	operator=(const Span &other);//	Copy assignement operator
+		~Span();//								Destructor
 
 		void	addNumber(int nb);
-		void	shortestSpan() const;
-		void	longestSpan() const;
-		void	addOnce();
+		void	addNumberS(unsigned int size);
+		int		shortestSpan() const;
+		int		longestSpan() const;
 	
-	class NoMoreSpaceException : public std::exception
-	{
-		public:
-			const char	*what() const throw()
-			{
-				return ("No more space in this container.");
-			}
-	}
+		class NoMoreSpaceException : public std::exception
+		{
+			public:
+				virtual const char	*what() const throw();
+		};
 
-	class DistanceException : public std::exception
-	{
-		public:
-			const char	*what() const throw()
-			{
-				return ("No distance available");
-			}
-	}
+		class DistanceException : public std::exception
+		{
+			public:
+				virtual const char	*what() const throw();
+		};
 };
 
 #endif
