@@ -18,8 +18,8 @@ void	print(const T &toPrint)
 	std::cout << toPrint << std::endl;
 }
 
-template <typename T>
-void	iter(T *ArrayPtr, size_t len, void(*f)(const T &))
+template <typename T>//typename F
+void	iter(T *ArrayPtr, size_t len, void(*f)(const T &))//F f
 {
 	for (size_t i = 0; i < len; i++)
 		f(ArrayPtr[i]);
