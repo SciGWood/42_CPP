@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 11:53:55 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/25 17:16:09 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/26 10:51:10 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ void	Span::addNumberS(unsigned int size)
 	{
 		for (unsigned int i = 0; i < size; i++)
 			this->addNumber(rand());
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+}
+
+void	Span::addRange(std::vector<int> table2)
+{
+	try
+	{
+		if (this->_vector.size() >= this->_N || this->_vector.size() + table2.size() > this->_N)
+			throw (Span::NoMoreSpaceException());
+		this->_vector.insert(this->_vector.end(), table2.begin(), table2.end());
 	}
 	catch(const std::exception& e)
 	{

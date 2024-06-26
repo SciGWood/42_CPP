@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 11:53:34 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/06/25 17:24:15 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/06/26 10:51:37 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,29 @@ int	main()
 
 			span.addNumberS(14000);
 			std::cout << "Optimized addNumber function:" << std::endl;
+			std::cout << GREEN << span.shortestSpan() << RESET << std::endl;
+			std::cout << BLUE << span.longestSpan() << RESET << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		
+	}
+
+	{
+		try
+		{
+			Span span = Span(20);
+
+			span.addNumber(6);
+			span.addNumber(3);
+			span.addNumber(17);
+			span.addNumber(9);
+			span.addNumber(11);
+			std::vector<int>	table2(15, 45);
+			span.addRange(table2);
+			std::cout << "\nOptimized addRange function:" << std::endl;
 			std::cout << GREEN << span.shortestSpan() << RESET << std::endl;
 			std::cout << BLUE << span.longestSpan() << RESET << std::endl;
 		}

@@ -27,6 +27,7 @@ class Span
 
 		void	addNumber(int nb);
 		void	addNumberS(unsigned int size);
+		void	addRange(std::vector<int> table2);
 		int		shortestSpan() const;
 		int		longestSpan() const;
 	
