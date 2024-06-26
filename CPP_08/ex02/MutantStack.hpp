@@ -15,15 +15,24 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack() {};//						Default Constructor
-		MutantStack(const MutantStack &other) : std::stack<T>(other) {};//				Copy constructor
+		MutantStack() {};//													Default Constructor
+		MutantStack(const MutantStack &other) : std::stack<T>(other) {};//	Copy constructor
 		MutantStack&	operator=(const MutantStack &other)
 		{
 			if (this != &other)
 				*this = other;
 			return (*this);
 		};//	Copy assignement operator
-		~MutantStack() {};//										Destructor
+		~MutantStack() {};//												Destructor
 
+		typedef typename std::stack<T>::container_type::iterator	iterator;
 		
+		iterator	begin()
+		{
+			return (this->c.begin());
+		}
+		iterator	end()
+		{
+			return (this->c.end());
+		}
 };
