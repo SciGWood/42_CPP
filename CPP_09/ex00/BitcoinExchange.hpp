@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
+#include <iomanip>
 #include <map>
 
 # define RESET "\033[0m"
@@ -25,11 +27,11 @@ class BitcoinExchange
 		~BitcoinExchange();//						            		Destructor
 
 		float	ft_StrToFloat(std::string &str);
-		int		ft_StrToInt(std::string &str);
-		void	displayResult(std::string &filename);
-		bool	validDate();
-		bool	validValue();
-		bool	validFormat();
+		int		ft_StrToInt(std::string str);
+		void	displayResult(std::string filename);
+		bool	validDate(std::string &date);
+		bool	validValue(std::string &value);
+		float	getRate(std::string &date);
 };
 
 #endif

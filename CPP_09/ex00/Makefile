@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 15:07:26 by gdetourn          #+#    #+#              #
-#    Updated: 2024/06/26 15:50:56 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/07/01 16:48:04 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
 SRC	= 	main.cpp \
+		BitcoinExchange.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
