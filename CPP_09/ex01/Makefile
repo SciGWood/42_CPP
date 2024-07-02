@@ -6,16 +6,16 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 10:47:39 by gdetourn          #+#    #+#              #
-#    Updated: 2024/07/02 10:55:30 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/07/02 15:33:51 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= RNP
+NAME	= RPN
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 CC		= c++
 
 SRC	= 	main.cpp \
-		RNP.cpp
+		RPN.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -31,12 +31,12 @@ BLUE = \033[94m
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling RNP      🚧🛠️$(RESET)"
+	@echo "$(BOLD)$(RED)    🛠️ 🚧      Compiling RPN      🚧🛠️$(RESET)"
 	@echo "\n"
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) ➕💾🎆➖     RNP compiled     🟰🎆💾➗ $(RESET)"
+	@echo "$(BOLD)$(GREEN) ➕💾🎆➖     RPN compiled     🟰🎆💾➗ $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp

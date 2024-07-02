@@ -23,5 +23,19 @@ class	RPN
 		RPN&	operator=(const RPN &other);//	Copy assignement operator
 		~RPN();//								Destructor
 
-		void	doOp(std::string input);
+		void	calcRes(std::string input);
+		bool	validInput(std::string input);
+		void	doOp(int a, int b, char op);
+
+		class InvalidInputException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		class ZeroDivException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 };
