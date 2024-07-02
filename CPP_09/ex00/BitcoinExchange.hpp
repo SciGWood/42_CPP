@@ -26,7 +26,7 @@ class BitcoinExchange
 		BitcoinExchange&	operator=(const BitcoinExchange &other);//	Copy assignement operator
 		~BitcoinExchange();//						            		Destructor
 
-		float	ft_StrToFloat(std::string &str);
+		float	ft_StrToFloat(std::string str);
 		int		ft_StrToInt(std::string str);
 		void	displayResult(std::string filename);
 		bool	validDate(std::string &date);

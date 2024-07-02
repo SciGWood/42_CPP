@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:07:53 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/07/01 17:13:03 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/07/02 10:42:46 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& other)
 	return (*this);
 }
 
-float	BitcoinExchange::ft_StrToFloat(std::string &str)
+float	BitcoinExchange::ft_StrToFloat(std::string str)
 {
 	float				res;
 	std::stringstream	s(str);
@@ -69,7 +69,8 @@ bool	BitcoinExchange::validDate(std::string &date)
 
 	if (date.size() != 10 || date[4] != '-' || date[7] != '-')
 	{
-		std::cerr << "Error: bad input (format is YYYY-MM-DD) => " << date << std::endl;
+		std::cerr << GREEN << "Error: bad input => " << date << " (format is YYYY-MM-DD)"
+					<< RESET << std::endl;
 		return (false);
 	}
 	year = ft_StrToInt(date.substr(0, 4));
@@ -129,27 +130,29 @@ void	BitcoinExchange::displayResult(std::string filename)
 
 	if (!file.is_open())
 		std::cerr << "Error\nFail to open file " << filename << std::endl;
-
-	std::string		line;
-	std::getline(file, line);
-	while (std::getline(file, line))
+	else
 	{
-		size_t	separator = line.find('|');
-		if (separator == 0 || line.length() < separator + 2)
+		std::string		line;
+		std::getline(file, line);
+		while (std::getline(file, line))
 		{
-			std::cerr << RED << "Error: bad input => " << line << RESET << std::endl;
-			continue;
+			size_t	separator = line.find('|');
+			if (separator == std::string::npos || line.length() < separator + 3)
+			{
+				std::cerr << RED << "Error: bad input => " << line << RESET << std::endl;
+				continue;
+			}
+			std::string	date = line.substr(0, separator - 1);
+			if (!this->validDate(date))
+				continue;
+			std::string	value = line.substr(separator + 2);
+			if (!validValue(value))
+				continue;
+			
+			float ValueToPrint = ft_StrToFloat(value);
+			std::cout << CYAN << date << " => " << value << " = " << std::setprecision(2)
+						<< ValueToPrint * this->getRate(date) << RESET << std::endl;
 		}
-		std::string	date = line.substr(0, separator - 1);
-		if (!this->validDate(date))
-			continue;
-		std::string	value = line.substr(separator + 2);
-		if (!validValue(value))
-			continue;
-		
-		float ValueToPrint = ft_StrToFloat(value);
-		std::cout << CYAN << date << " => " << value << " = " << std::setprecision(2)
-					<< ValueToPrint * this->getRate(date) << RESET << std::endl;
 	}
 }
 
