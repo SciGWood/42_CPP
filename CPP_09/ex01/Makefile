@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 10:47:39 by gdetourn          #+#    #+#              #
-#    Updated: 2024/07/02 15:33:51 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/07/04 14:58:52 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) ➕💾🎆➖     RPN compiled     🟰🎆💾➗ $(RESET)"
+	@echo "$(BOLD)$(GREEN) ➕💾🎆➖     RPN compiled     ✖️ 🎆💾➗ $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp

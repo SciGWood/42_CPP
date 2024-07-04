@@ -6,7 +6,7 @@
 /*   By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 17:01:46 by gdetourn          #+#    #+#             */
-/*   Updated: 2024/07/04 14:35:22 by gdetourn         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:35:59 by gdetourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int	main(int argc, char *argv[])
 	std::vector<int>	Vector;
 	std::deque<int>		Deque;
 	std::list<int>		List;
-	for (int j = 0; j < argc; j++)
+	for (int j = 1; j < argc; j++)
 	{
-		int	number = std::atoi(argv[j]);
-		if (number < 0)
+		int			number = std::atoi(argv[j]);
+		std::string	arg = argv[j];
+		if ((number < 0) || (arg.find('0') == std::string::npos && number == 0))
 		{
-			std::cout << "Error: Only positive integers accepted" << std::endl;
+			std::cout << RED << "Error: Only digits and positive integers accepted"
+						<< RESET << std::endl;
 			return (1);
 		}
 		Vector.push_back(number);
