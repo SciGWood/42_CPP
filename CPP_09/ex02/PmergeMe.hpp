@@ -1,10 +1,13 @@
 #pragma once
 
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include <sstream>
+#include <ctime>
 #include <list>
 #include <vector>
+#include <deque>
 
 # define RESET "\033[0m"
 # define BLUE "\033[94m"
@@ -13,6 +16,8 @@
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
 # define CYAN "\033[36m"
+
+/*Ford-Johnson algorithm = merge-insertion sort*/
 
 class	PmergeMe
 {
@@ -24,19 +29,6 @@ class	PmergeMe
 		PmergeMe&	operator=(const PmergeMe &other);//	Copy assignement operator
 		~PmergeMe();//								    Destructor
 
-		void	calcRes(std::string input);
-		bool	validInput(std::string input);
-		void	doOp(int a, int b, char op);
-
-		class InvalidInputException : public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
-
-		class ZeroDivException : public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
+		void	sortPmMeVector(std::vector<int> &vector);
+		void	sortPmMeDeque(std::deque<int> &deque);
 };

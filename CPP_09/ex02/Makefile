@@ -6,7 +6,7 @@
 #    By: gdetourn <gdetourn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 17:01:19 by gdetourn          #+#    #+#              #
-#    Updated: 2024/07/02 17:11:57 by gdetourn         ###   ########.fr        #
+#    Updated: 2024/07/04 13:55:17 by gdetourn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)-----------      -----------      -----------$(RESET)"
 	@echo "\n"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(BOLD)$(GREEN) ➕💾🎆➖     PmergeMe compiled     🟰🎆💾➗ $(RESET)"
+	@echo "$(BOLD)$(GREEN) 🔢💾🎆↕️      PmergeMe compiled     ↕️ 🎆💾🔢 $(RESET)"
 	@echo "\n"
 
 %.o: %.cpp
